@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>MCOSMTPSendOperation Class Reference</title>
+		<title>MCOMailProvidersManager Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">MCOSMTPSendOperation Class Reference</h1>
+				<h1 class="hideInXcode">MCOMailProvidersManager Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -38,18 +38,22 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/progress">&nbsp;&nbsp;&nbsp;&nbsp;progress</option>
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedManager">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedManager</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/start:">&nbsp;&nbsp;&nbsp;&nbsp;- start:</option>
+	<option value="//api/name/providerForEmail:">&nbsp;&nbsp;&nbsp;&nbsp;- providerForEmail:</option>
+	
+	<option value="//api/name/providerForIdentifier:">&nbsp;&nbsp;&nbsp;&nbsp;- providerForIdentifier:</option>
+	
+	<option value="//api/name/providerForMX:">&nbsp;&nbsp;&nbsp;&nbsp;- providerForMX:</option>
 	
 	
 	
@@ -73,19 +77,23 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/progress">progress</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedManager">sharedManager</a></span></li>
 	
 </ul></li>
 
 
 
-
-
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start:">start:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/providerForEmail:">providerForEmail:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/providerForIdentifier:">providerForIdentifier:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/providerForMX:">providerForMX:</a></span></li>
 	
 </ul></li>
 
@@ -94,7 +102,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MCOSMTPSendOperation Class Reference" name="top"></a>
+				<a title="MCOMailProvidersManager Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -103,7 +111,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">MCOSMTPSendOperation Class Reference</h1>
+						<h1 class="title title-header">MCOMailProvidersManager Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -111,10 +119,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value"><a href="../Classes/MCOSMTPOperation.html">MCOSMTPOperation</a> : MCOOperation : NSObject</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MCOSMTPSendOperation.h<br />MCOSMTPSendOperation.mm</td>
+	<td class="specification-value">MCOMailProvidersManager.h<br />MCOMailProvidersManager.mm</td>
 </tr>
 						</tbody></table></div>
 					
@@ -124,7 +132,11 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This is an asynchronous operation that will send a message through SMTP.</p>
+						<p>   This class is used to detect an email provider and it&rsquo;s associated
+   metadata either by MX record or by the email addresss.</p>
+
+<p>   An app might want to use this during setup to limit the number of settings
+   a user has to input.</p>
 					</div>
 					
 					
@@ -142,15 +154,32 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/progress">&nbsp;&nbsp;progress</a></code>
-		<span class="tooltip"><p>This block will be called as the message is sent</p></span>
+		<code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
+		<span class="tooltip"><p>The shared manager that is used for all lookups</p></span>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/start:">&ndash;&nbsp;start:</a></code>
-		<span class="tooltip"><p>Starts the asynchronous operation.</p></span>
+		<code><a href="#//api/name/providerForEmail:">&ndash;&nbsp;providerForEmail:</a></code>
+		<span class="tooltip"><pre><code>Given an email address will try to determine the provider
+</code></pre></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/providerForMX:">&ndash;&nbsp;providerForMX:</a></code>
+		<span class="tooltip"><pre><code>Given the DNS MX record will try to determine the provider
+</code></pre></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/providerForIdentifier:">&ndash;&nbsp;providerForIdentifier:</a></code>
+		<span class="tooltip"><p>   Will return information about a provider. Useful if you already know the
+   provider (like if it has been determined previously)</p></span>
 	</span>
 	
 	
@@ -163,23 +192,25 @@
 					
 					
 					
+					
+					
 					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/progress" title="progress"></a>
-	<h3 class="subsubtitle method-title">progress</h3>
+	<a name="//api/name/sharedManager" title="sharedManager"></a>
+	<h3 class="subsubtitle method-title">sharedManager</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>This block will be called as the message is sent</p>
+		<p>The shared manager that is used for all lookups</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) MCOSMTPOperationProgressBlock progress</code></div>
+	<div class="method-subsection method-declaration"><code>+ (MCOMailProvidersManager *)sharedManager</code></div>
 
     
 	
@@ -197,7 +228,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MCOSMTPSendOperation.h</code><br />
+		<code class="declared-in-ref">MCOMailProvidersManager.h</code><br />
 	</div>				
 	
 	
@@ -207,43 +238,32 @@
 					
 					
 					
-					
-					
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/start:" title="start:"></a>
-	<h3 class="subsubtitle method-title">start:</h3>
+	<a name="//api/name/providerForEmail:" title="providerForEmail:"></a>
+	<h3 class="subsubtitle method-title">providerForEmail:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Starts the asynchronous operation.</p>
+		<pre><code>Given an email address will try to determine the provider
+</code></pre>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)start:(void ( ^ ) ( NSError *error ))<em>completionBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (MCOMailProvider *)providerForEmail:(NSString *)<em>email</em></code></div>
 
     
 	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>completionBlock</em></dt>
-			<dd><p>Called when the operation is finished.</p>
-
-<ul>
-<li><p>On success <code>error</code> will be nil</p></li>
-<li><p>On failure, <code>error</code> will be set with <code>MCOErrorDomain</code> as domain and an
- error code available in MCOConstants.h,</p></li>
-</ul>
-</dd>
-		</dl>
-		
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The email provider info or nil if it can&rsquo;t be determined.</p>
 	</div>
 	
 	
@@ -256,11 +276,93 @@
 	
 	
 	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOMailProvidersManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/providerForIdentifier:" title="providerForIdentifier:"></a>
+	<h3 class="subsubtitle method-title">providerForIdentifier:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>   Will return information about a provider. Useful if you already know the
+   provider (like if it has been determined previously)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOMailProvider *)providerForIdentifier:(NSString *)<em>identifier</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The email provider info or nil if none matches</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MCOSMTPOperation.h</code><br />
+		<code class="declared-in-ref">MCOMailProvidersManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/providerForMX:" title="providerForMX:"></a>
+	<h3 class="subsubtitle method-title">providerForMX:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<pre><code>Given the DNS MX record will try to determine the provider
+</code></pre>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOMailProvider *)providerForMX:(NSString *)<em>hostname</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The email provider info or nil if it can&rsquo;t be determined.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOMailProvidersManager.h</code><br />
 	</div>				
 	
 	

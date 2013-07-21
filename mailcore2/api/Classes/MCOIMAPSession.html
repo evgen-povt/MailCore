@@ -40,11 +40,15 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/OAuth2Token">&nbsp;&nbsp;&nbsp;&nbsp;OAuth2Token</option>
+	
 	<option value="//api/name/allowsFolderConcurrentAccessEnabled">&nbsp;&nbsp;&nbsp;&nbsp;allowsFolderConcurrentAccessEnabled</option>
 	
 	<option value="//api/name/authType">&nbsp;&nbsp;&nbsp;&nbsp;authType</option>
 	
 	<option value="//api/name/checkCertificateEnabled">&nbsp;&nbsp;&nbsp;&nbsp;checkCertificateEnabled</option>
+	
+	<option value="//api/name/connectionLogger">&nbsp;&nbsp;&nbsp;&nbsp;connectionLogger</option>
 	
 	<option value="//api/name/connectionType">&nbsp;&nbsp;&nbsp;&nbsp;connectionType</option>
 	
@@ -107,9 +111,19 @@
 	
 	<option value="//api/name/folderInfoOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- folderInfoOperation:</option>
 	
+	<option value="//api/name/folderStatusOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- folderStatusOperation:</option>
+	
+	<option value="//api/name/htmlBodyRenderingOperationWithMessage:folder:">&nbsp;&nbsp;&nbsp;&nbsp;- htmlBodyRenderingOperationWithMessage:folder:</option>
+	
+	<option value="//api/name/htmlRenderingOperationWithMessage:folder:">&nbsp;&nbsp;&nbsp;&nbsp;- htmlRenderingOperationWithMessage:folder:</option>
+	
 	<option value="//api/name/identityOperationWithVendor:name:version:">&nbsp;&nbsp;&nbsp;&nbsp;- identityOperationWithVendor:name:version:</option>
 	
 	<option value="//api/name/idleOperationWithFolder:lastKnownUID:">&nbsp;&nbsp;&nbsp;&nbsp;- idleOperationWithFolder:lastKnownUID:</option>
+	
+	<option value="//api/name/plainTextBodyRenderingOperationWithMessage:folder:">&nbsp;&nbsp;&nbsp;&nbsp;- plainTextBodyRenderingOperationWithMessage:folder:</option>
+	
+	<option value="//api/name/plainTextRenderingOperationWithMessage:folder:">&nbsp;&nbsp;&nbsp;&nbsp;- plainTextRenderingOperationWithMessage:folder:</option>
 	
 	<option value="//api/name/renameFolderOperation:otherName:">&nbsp;&nbsp;&nbsp;&nbsp;- renameFolderOperation:otherName:</option>
 	
@@ -155,6 +169,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Search Operations">Search Operations</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Rendering Operations">Rendering Operations</a></span></li>
+	
 </ul></li>
 
 
@@ -163,11 +179,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/OAuth2Token">OAuth2Token</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allowsFolderConcurrentAccessEnabled">allowsFolderConcurrentAccessEnabled</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authType">authType</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkCertificateEnabled">checkCertificateEnabled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionLogger">connectionLogger</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionType">connectionType</a></span></li>
 	
@@ -231,9 +251,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/folderInfoOperation:">folderInfoOperation:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/folderStatusOperation:">folderStatusOperation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/htmlBodyRenderingOperationWithMessage:folder:">htmlBodyRenderingOperationWithMessage:folder:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/htmlRenderingOperationWithMessage:folder:">htmlRenderingOperationWithMessage:folder:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/identityOperationWithVendor:name:version:">identityOperationWithVendor:name:version:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/idleOperationWithFolder:lastKnownUID:">idleOperationWithFolder:lastKnownUID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/plainTextBodyRenderingOperationWithMessage:folder:">plainTextBodyRenderingOperationWithMessage:folder:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/plainTextRenderingOperationWithMessage:folder:">plainTextRenderingOperationWithMessage:folder:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/renameFolderOperation:otherName:">renameFolderOperation:otherName:</a></span></li>
 	
@@ -337,6 +367,13 @@ to begin the operation.</p>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/OAuth2Token">&nbsp;&nbsp;OAuth2Token</a></code>
+		<span class="tooltip"><p>This is the OAuth2 token.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/authType">&nbsp;&nbsp;authType</a></code>
 		<span class="tooltip"><p>This is the authentication type to use to connect.
 <code>MCOAuthTypeSASLNone</code> means that it uses the clear-text is used (and is the default).</p></span>
@@ -400,6 +437,13 @@ See MCOConnectionType for more information.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connectionLogger">&nbsp;&nbsp;connectionLogger</a></code>
+		<span class="tooltip"><p>Sets logger callback. The network traffic will be sent to this block.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -412,6 +456,13 @@ See MCOConnectionType for more information.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/folderInfoOperation:">&ndash;&nbsp;folderInfoOperation:</a></code>
 		<span class="tooltip"><p>Returns an operation that retrieves folder metadata (like UIDNext)</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/folderStatusOperation:">&ndash;&nbsp;folderStatusOperation:</a></code>
+		<span class="tooltip"><p>Returns an operation that retrieves folder status (like UIDNext &ndash; Unseen &ndash;)</p></span>
 	</span>
 	
 	
@@ -528,13 +579,23 @@ See MCOConnectionType for more information.</p></span>
 		<span class="tooltip"><p>Returns an operation to fetch messages by (sequence) number.
 For example: show 50 most recent uids.</p>
 
-<pre><code> MCOIMAPFetchMessagesOperation * op = [session fetchMessagesByNumberOperationWithFolder:@"INBOX"
-                                                                            requestKind:MCOIMAPMessagesRequestKindUID
-                                                                                   uids:MCORangeMake(messageCount - 50, messageCount)];
- [op start:^(NSError * error, NSArray * messages, MCOIndexSet * vanishedMessages) {
-    for(MCOIMAPMessage * msg in messages) {
-      NSLog(@"%lu", [msg uid]);
-    }
+<pre><code> NSString *folder = @"INBOX";
+ MCOIMAPFolderInfoOperation *folderInfo = [session folderInfoOperation:folder];
+
+ [folderInfo start:^(NSError *error, MCOIMAPFolderInfo *info) {
+     int numberOfMessages = 50;
+     numberOfMessages -= 1;
+     MCOIndexSet *numbers = [MCOIndexSet indexSetWithRange:MCORangeMake([info messageCount] - numberOfMessages, numberOfMessages)];
+
+     MCOIMAPFetchMessagesOperation *fetchOperation = [session fetchMessagesByNumberOperationWithFolder:folder
+                                                                                           requestKind:MCOIMAPMessagesRequestKindUid
+                                                                                               numbers:numbers];
+
+     [fetchOperation start:^(NSError *error, NSArray *messages, MCOIndexSet *vanishedMessages) {
+         for (MCOIMAPMessage * message in messages) {
+             NSLog(@"%u", [message uid]);
+         }
+     }];
  }];
 </code></pre></span>
 	</span>
@@ -653,6 +714,44 @@ See MCOIMAPCapability for the list of capabilities.</p></span>
 </li>
 						</ul>
 						
+						
+						<a title="Rendering Operations" name="task_Rendering Operations"></a>
+						<h3 class="subsubtitle task-title">Rendering Operations</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/htmlRenderingOperationWithMessage:folder:">&ndash;&nbsp;htmlRenderingOperationWithMessage:folder:</a></code>
+		<span class="tooltip"><p>Returns an operation to render the HTML version of a message to be displayed in a web view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/htmlBodyRenderingOperationWithMessage:folder:">&ndash;&nbsp;htmlBodyRenderingOperationWithMessage:folder:</a></code>
+		<span class="tooltip"><p>Returns an operation to render the HTML body of a message to be displayed in a web view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/plainTextRenderingOperationWithMessage:folder:">&ndash;&nbsp;plainTextRenderingOperationWithMessage:folder:</a></code>
+		<span class="tooltip"><p>Returns an operation to render the plain text version of a message.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/plainTextBodyRenderingOperationWithMessage:folder:">&ndash;&nbsp;plainTextBodyRenderingOperationWithMessage:folder:</a></code>
+		<span class="tooltip"><p>Returns an operation to render the plain text body of a message.
+All end of line will be removed and white spaces cleaned up.
+This method can be used to generate the summary of the message.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
 					</div>
 					
 					
@@ -662,6 +761,42 @@ See MCOIMAPCapability for the list of capabilities.</p></span>
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/OAuth2Token" title="OAuth2Token"></a>
+	<h3 class="subsubtitle method-title">OAuth2Token</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This is the OAuth2 token.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *OAuth2Token</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOIMAPSession.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/allowsFolderConcurrentAccessEnabled" title="allowsFolderConcurrentAccessEnabled"></a>
@@ -758,7 +893,7 @@ See MCOIMAPCapability for the list of capabilities.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL checkCertificateEnabled</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isCheckCertificateEnabled) BOOL checkCertificateEnabled</code></div>
 
     
 	
@@ -767,6 +902,48 @@ See MCOIMAPCapability for the list of capabilities.</p></span>
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOIMAPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/connectionLogger" title="connectionLogger"></a>
+	<h3 class="subsubtitle method-title">connectionLogger</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets logger callback. The network traffic will be sent to this block.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) MCOConnectionLogger connectionLogger</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>[session setConnectionLogger:^(void * connectionID, MCOConnectionLogType type, NSData * data) {
+}];</p>
+	</div>
 	
 	
 	
@@ -903,7 +1080,7 @@ See MCOConnectionType for more information.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *hostname</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *hostname</code></div>
 
     
 	
@@ -975,7 +1152,7 @@ See MCOConnectionType for more information.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *password</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *password</code></div>
 
     
 	
@@ -1083,7 +1260,7 @@ See MCOConnectionType for more information.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *username</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *username</code></div>
 
     
 	
@@ -1737,13 +1914,23 @@ See MCOIMAPCapability for the list of capabilities.</p>
 		<p>Returns an operation to fetch messages by (sequence) number.
 For example: show 50 most recent uids.</p>
 
-<pre><code> MCOIMAPFetchMessagesOperation * op = [session fetchMessagesByNumberOperationWithFolder:@"INBOX"
-                                                                            requestKind:MCOIMAPMessagesRequestKindUID
-                                                                                   uids:MCORangeMake(messageCount - 50, messageCount)];
- [op start:^(NSError * error, NSArray * messages, MCOIndexSet * vanishedMessages) {
-    for(MCOIMAPMessage * msg in messages) {
-      NSLog(@"%lu", [msg uid]);
-    }
+<pre><code> NSString *folder = @"INBOX";
+ MCOIMAPFolderInfoOperation *folderInfo = [session folderInfoOperation:folder];
+
+ [folderInfo start:^(NSError *error, MCOIMAPFolderInfo *info) {
+     int numberOfMessages = 50;
+     numberOfMessages -= 1;
+     MCOIndexSet *numbers = [MCOIndexSet indexSetWithRange:MCORangeMake([info messageCount] - numberOfMessages, numberOfMessages)];
+
+     MCOIMAPFetchMessagesOperation *fetchOperation = [session fetchMessagesByNumberOperationWithFolder:folder
+                                                                                           requestKind:MCOIMAPMessagesRequestKindUid
+                                                                                               numbers:numbers];
+
+     [fetchOperation start:^(NSError *error, NSArray *messages, MCOIndexSet *vanishedMessages) {
+         for (MCOIMAPMessage * message in messages) {
+             NSLog(@"%u", [message uid]);
+         }
+     }];
  }];
 </code></pre>
 	</div>		
@@ -1898,9 +2085,9 @@ For example: show 50 most recent uids.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code> MCOIMAPFetchFoldersOperation * op = [session fetchAllFoldersOperation];
- [op start:^(NSError * error, NSArray * folders) {
- }];
+		<pre><code>MCOIMAPFetchFoldersOperation * op = [session fetchAllFoldersOperation];
+[op start:^(NSError * error, NSArray * folders) {
+}];
 </code></pre>
 	</div>
 	
@@ -1949,6 +2136,145 @@ For example: show 50 most recent uids.</p>
       NSLog(@"HIGHESTMODSEQ: %llu", (unsigned long long) [info modSequenceValue]);
       NSLog(@"messages count: %lu", [info messageCount]);
  }];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOIMAPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/folderStatusOperation:" title="folderStatusOperation:"></a>
+	<h3 class="subsubtitle method-title">folderStatusOperation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an operation that retrieves folder status (like UIDNext &ndash; Unseen &ndash;)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOIMAPFolderStatusOperation *)folderStatusOperation:(NSString *)<em>folder</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code>MCOIMAPFolderStatusOperation * op = [session folderStatusOperation:@"INBOX"];
+[op start:^(NSError *error, MCOIMAPFolderStatus * info) {
+    NSLog(@"UIDNEXT: %lu", (unsigned long) [info uidNext]);
+    NSLog(@"UIDVALIDITY: %lu", (unsigned long) [info uidValidity]);
+    NSLog(@"messages count: %lu", [info totalMessages]);
+}];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOIMAPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/htmlBodyRenderingOperationWithMessage:folder:" title="htmlBodyRenderingOperationWithMessage:folder:"></a>
+	<h3 class="subsubtitle method-title">htmlBodyRenderingOperationWithMessage:folder:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an operation to render the HTML body of a message to be displayed in a web view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOIMAPMessageRenderingOperation *)htmlBodyRenderingOperationWithMessage:(MCOIMAPMessage *)<em>message</em> folder:(NSString *)<em>folder</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code>MCOIMAPMessageRenderingOperation * op = [session htmlBodyRenderingOperationWithMessage:msg
+                                                                                folder:@"INBOX"];
+
+[op start:^(NSString * htmlString, NSError * error) {
+}];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOIMAPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/htmlRenderingOperationWithMessage:folder:" title="htmlRenderingOperationWithMessage:folder:"></a>
+	<h3 class="subsubtitle method-title">htmlRenderingOperationWithMessage:folder:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an operation to render the HTML version of a message to be displayed in a web view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOIMAPMessageRenderingOperation *)htmlRenderingOperationWithMessage:(MCOIMAPMessage *)<em>message</em> folder:(NSString *)<em>folder</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code>MCOIMAPMessageRenderingOperation * op = [session htmlRenderingOperationWithMessage:msg
+                                                                        folder:@"INBOX"];
+
+[op start:^(NSString * htmlString, NSError * error) {
+}];
 </code></pre>
 	</div>
 	
@@ -2041,6 +2367,100 @@ See <a href="http://tools.ietf.org/html/rfc2177">RFC2177</a> for me info.</p>
                                                  lastKnownUID:0];
  [op start:^(NSError * error) {
  }];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOIMAPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/plainTextBodyRenderingOperationWithMessage:folder:" title="plainTextBodyRenderingOperationWithMessage:folder:"></a>
+	<h3 class="subsubtitle method-title">plainTextBodyRenderingOperationWithMessage:folder:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an operation to render the plain text body of a message.
+All end of line will be removed and white spaces cleaned up.
+This method can be used to generate the summary of the message.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOIMAPMessageRenderingOperation *)plainTextBodyRenderingOperationWithMessage:(MCOIMAPMessage *)<em>message</em> folder:(NSString *)<em>folder</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code>MCOIMAPMessageRenderingOperation * op = [session plainTextBodyRenderingOperationWithMessage:msg
+                                                                                     folder:@"INBOX"];
+
+[op start:^(NSString * htmlString, NSError * error) {
+}];
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOIMAPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/plainTextRenderingOperationWithMessage:folder:" title="plainTextRenderingOperationWithMessage:folder:"></a>
+	<h3 class="subsubtitle method-title">plainTextRenderingOperationWithMessage:folder:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an operation to render the plain text version of a message.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOIMAPMessageRenderingOperation *)plainTextRenderingOperationWithMessage:(MCOIMAPMessage *)<em>message</em> folder:(NSString *)<em>folder</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code>MCOIMAPMessageRenderingOperation * op = [session plainTextRenderingOperationWithMessage:msg
+                                                                                 folder:@"INBOX"];
+
+[op start:^(NSString * htmlString, NSError * error) {
+}];
 </code></pre>
 	</div>
 	
@@ -2450,7 +2870,7 @@ See <a href="http://tools.ietf.org/html/rfc2177">RFC2177</a> for me info.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MailCore2. All rights reserved. (Last updated: 2013-06-03)</span><br />
+						<p><span class="copyright">&copy; 2013 MailCore2. All rights reserved. (Last updated: 2013-07-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

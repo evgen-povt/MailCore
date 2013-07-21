@@ -44,6 +44,8 @@
 	
 	<option value="//api/name/checkCertificateEnabled">&nbsp;&nbsp;&nbsp;&nbsp;checkCertificateEnabled</option>
 	
+	<option value="//api/name/connectionLogger">&nbsp;&nbsp;&nbsp;&nbsp;connectionLogger</option>
+	
 	<option value="//api/name/connectionType">&nbsp;&nbsp;&nbsp;&nbsp;connectionType</option>
 	
 	<option value="//api/name/hostname">&nbsp;&nbsp;&nbsp;&nbsp;hostname</option>
@@ -66,6 +68,8 @@
 	<option value="//api/name/checkAccountOperation">&nbsp;&nbsp;&nbsp;&nbsp;- checkAccountOperation</option>
 	
 	<option value="//api/name/deleteMessagesOperationWithIndexes:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteMessagesOperationWithIndexes:</option>
+	
+	<option value="//api/name/disconnectOperation">&nbsp;&nbsp;&nbsp;&nbsp;- disconnectOperation</option>
 	
 	<option value="//api/name/fetchHeaderOperationWithIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- fetchHeaderOperationWithIndex:</option>
 	
@@ -103,6 +107,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkCertificateEnabled">checkCertificateEnabled</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionLogger">connectionLogger</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionType">connectionType</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hostname">hostname</a></span></li>
@@ -126,6 +132,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkAccountOperation">checkAccountOperation</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteMessagesOperationWithIndexes:">deleteMessagesOperationWithIndexes:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disconnectOperation">disconnectOperation</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchHeaderOperationWithIndex:">fetchHeaderOperationWithIndex:</a></span></li>
 	
@@ -244,6 +252,13 @@ See MCOConnectionType for more information.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connectionLogger">&nbsp;&nbsp;connectionLogger</a></code>
+		<span class="tooltip"><p>Sets logger callback. The network traffic will be sent to this block.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -278,6 +293,13 @@ See MCOConnectionType for more information.</p></span>
 		<code><a href="#//api/name/deleteMessagesOperationWithIndexes:">&ndash;&nbsp;deleteMessagesOperationWithIndexes:</a></code>
 		<span class="tooltip"><p>Returns an operation that will delete the given messages.
 Will disconnect when finished.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disconnectOperation">&ndash;&nbsp;disconnectOperation</a></code>
+		<span class="tooltip"><p>Returns an operation that will disconnect the session.</p></span>
 	</span>
 	
 	
@@ -364,6 +386,48 @@ Will disconnect when finished.</p></span>
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOPOPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/connectionLogger" title="connectionLogger"></a>
+	<h3 class="subsubtitle method-title">connectionLogger</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets logger callback. The network traffic will be sent to this block.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) MCOConnectionLogger connectionLogger</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>[session setConnectionLogger:^(void * connectionID, MCOConnectionLogType type, NSData * data) {
+}];</p>
+	</div>
 	
 	
 	
@@ -700,6 +764,49 @@ Will disconnect when finished.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/disconnectOperation" title="disconnectOperation"></a>
+	<h3 class="subsubtitle method-title">disconnectOperation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an operation that will disconnect the session.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MCOPOPOperation *)disconnectOperation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><a href="../Classes/MCOPOPOperation.html">MCOPOPOperation</a> * op = [session disconnectOperation];
+[op start:^(NSError * error) {
+}];</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOPOPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/fetchHeaderOperationWithIndex:" title="fetchHeaderOperationWithIndex:"></a>
 	<h3 class="subsubtitle method-title">fetchHeaderOperationWithIndex:</h3>
 	
@@ -848,7 +955,7 @@ Will disconnect when finished.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MailCore2. All rights reserved. (Last updated: 2013-06-03)</span><br />
+						<p><span class="copyright">&copy; 2013 MailCore2. All rights reserved. (Last updated: 2013-07-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

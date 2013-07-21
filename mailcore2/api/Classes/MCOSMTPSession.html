@@ -40,9 +40,13 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/OAuth2Token">&nbsp;&nbsp;&nbsp;&nbsp;OAuth2Token</option>
+	
 	<option value="//api/name/authType">&nbsp;&nbsp;&nbsp;&nbsp;authType</option>
 	
 	<option value="//api/name/checkCertificateEnabled">&nbsp;&nbsp;&nbsp;&nbsp;checkCertificateEnabled</option>
+	
+	<option value="//api/name/connectionLogger">&nbsp;&nbsp;&nbsp;&nbsp;connectionLogger</option>
 	
 	<option value="//api/name/connectionType">&nbsp;&nbsp;&nbsp;&nbsp;connectionType</option>
 	
@@ -95,9 +99,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/OAuth2Token">OAuth2Token</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authType">authType</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/checkCertificateEnabled">checkCertificateEnabled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionLogger">connectionLogger</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionType">connectionType</a></span></li>
 	
@@ -211,6 +219,13 @@ to begin the operation.</p>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/OAuth2Token">&nbsp;&nbsp;OAuth2Token</a></code>
+		<span class="tooltip"><p>This is the OAuth2 token.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/authType">&nbsp;&nbsp;authType</a></code>
 		<span class="tooltip"><p>This is the authentication type to use to connect.
 <code>MCOAuthTypeSASLNone</code> means that it uses the clear-text is used (and is the default).</p></span>
@@ -244,6 +259,13 @@ See MCOConnectionType for more information.</p></span>
 		<code><a href="#//api/name/useHeloIPEnabled">&nbsp;&nbsp;useHeloIPEnabled</a></code>
 		<span class="tooltip"><p>If set to YES, when sending the EHLO or HELO command, use IP address instead of <a href="#//api/name/hostname">hostname</a>.
 Default is NO.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connectionLogger">&nbsp;&nbsp;connectionLogger</a></code>
+		<span class="tooltip"><p>Sets logger callback. The network traffic will be sent to this block.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -283,6 +305,42 @@ It will also filter out Bcc from the content of the message.</p></span>
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/OAuth2Token" title="OAuth2Token"></a>
+	<h3 class="subsubtitle method-title">OAuth2Token</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This is the OAuth2 token.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *OAuth2Token</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOSMTPSession.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/authType" title="authType"></a>
@@ -347,6 +405,48 @@ It will also filter out Bcc from the content of the message.</p></span>
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MCOSMTPSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/connectionLogger" title="connectionLogger"></a>
+	<h3 class="subsubtitle method-title">connectionLogger</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets logger callback. The network traffic will be sent to this block.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) MCOConnectionLogger connectionLogger</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>[session setConnectionLogger:^(void * connectionID, MCOConnectionLogType type, NSData * data) {
+}];</p>
+	</div>
 	
 	
 	
@@ -731,7 +831,7 @@ It will also filter out Bcc from the content of the message.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 MailCore2. All rights reserved. (Last updated: 2013-06-03)</span><br />
+						<p><span class="copyright">&copy; 2013 MailCore2. All rights reserved. (Last updated: 2013-07-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
